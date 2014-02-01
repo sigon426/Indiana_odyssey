@@ -65,9 +65,12 @@ function map() {
     story = _;
   };
 
-  _m.moveTo = function(ll) {
+  _m.moveTo = function(location, zoom) {
     var f = function() {
-      map.panTo(ll);
+      map.panTo(location);
+      map.setZoom(zoom);
+      L.marker(location).addTo(map)
+        .bindPopup("<b>Hello world!</b><br />I am a popup.");
     };
 
     f.story = _m.story;
