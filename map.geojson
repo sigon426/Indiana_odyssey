@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "Indy in a horse",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Tabernas Desert"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.412214,
+          37.051284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "tank falls into climp",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Tabernas Desert",
+        "youtube": "<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/CvcpFTLZwrU\" frameborder=\"0\" allowfullscreen></iframe>"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.45268,
+          37.018224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "Rolls Royce scene",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Escuela de Artes y Oficios de Almeria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.464486062526703,
+          36.83709580821883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "Henry Jones Sr. scares the birds away with an umbrella",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Playa del Monsul, Cabo de Gata",
+        "youtube": "<iframe width="
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.14582085609436,
+          36.73068571671117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "Iskenderun tren station",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "La estación de tren de Guadix",
+        "youtube": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.127156,
+          37.316814
+        ]
+      }
+    }
+  ]
+}
