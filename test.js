@@ -1,28 +1,13 @@
-//note geojson coordinates are changed to lat, lon as spected by the story function
+//note: geojson coordinates are changed to lat, lon as spected by the story function
 var scenes=[
-    {
-      "type": "Feature",
-      "properties": {
-        "scene": "Henry Jones Sr. scares the birds away with an umbrella",
-        "movie": "Indiana Jones and the Last crusade",
-        "location": "Playa del Monsul, Cabo de Gata",
-        "youtube": "<iframe width="
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.73068571671117,
-          -2.14582085609436
-        ]
-      }
-    },
     {
       "type": "Feature",
       "properties": {
         "scene": "Iskenderun train station",
         "movie": "Indiana Jones and the Last crusade",
         "location": "La estación de tren de Guadix",
-        "youtube": ""
+        "youtube": "", 
+        "zoom":13
       },
       "geometry": {
         "type": "Point",
@@ -35,9 +20,28 @@ var scenes=[
     {
       "type": "Feature",
       "properties": {
+        "scene": "Henry Jones Sr. scares the birds away with an umbrella",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Playa del Monsul, Cabo de Gata",
+        "youtube": "<iframe width=",
+        "zoom":12,
+        "photo":"Monsul.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.73068571671117,
+          -2.14582085609436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "scene": "Rolls Royce scene",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "Escuela de Artes y Oficios de Almeria"
+        "location": "Escuela de Artes y Oficios de Almeria",
+        "zoom":14
       },
       "geometry": {
         "type": "Point",
@@ -53,9 +57,12 @@ var scenes=[
 m = map();
 
 Story()
-  .addState(Scroll('scene1', 400), m.moveTo(scenes[1].geometry.coordinates), 'name1')
-  .addState(Scroll('scene2', 400), m.moveTo(scenes[0].geometry.coordinates))
-  .addState(Scroll('scene3', 400), m.moveTo(scenes[2].geometry.coordinates));
+  .addState(Scroll('scene0', 400), m.moveTo(scenes[0].geometry.coordinates,scenes[0].properties.zoom))
+  .addState(Scroll('scene1', 400), m.moveTo(scenes[1].geometry.coordinates,scenes[1].properties.zoom))
+  .addState(Scroll('scene2', 400), m.moveTo(scenes[2].geometry.coordinates,scenes[2].properties.zoom));
+
+
+
 
 /*
 
@@ -94,10 +101,14 @@ function Click(el) {
 
   return plugin;
 }
-*/
+
 //
 // custom map actions can be done too
 // 
+var pos=scenes[1].geometry.coordinates;
+var content="<b>"+scenes[1].properties.location+"</b><br /><img src='./photos/"+scenes[1].properties.photo+"''>"
+Map()
+
 
 map.addAction('addMarker', function(storyMap) {
   function addMarker(pos, content)
