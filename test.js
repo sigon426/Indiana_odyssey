@@ -1,11 +1,61 @@
+//note geojson coordinates are changed to lat, lon as spected by the story function
+var scenes=[
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "Henry Jones Sr. scares the birds away with an umbrella",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Playa del Monsul, Cabo de Gata",
+        "youtube": "<iframe width="
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.73068571671117,
+          -2.14582085609436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "Iskenderun train station",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "La estación de tren de Guadix",
+        "youtube": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.316814,
+          -3.127156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "Rolls Royce scene",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Escuela de Artes y Oficios de Almeria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83709580821883,
+          -2.464486062526703
+        ]
+      }
+    }
+];
 
 
 m = map();
 
 Story()
-  .addState(Scroll('tt3', 400), m.moveTo([51.54, -0.08]), 'name1')
-  .addState(Scroll('tt', 400), m.moveTo([51.53, -0.07]))
-  .addState(Scroll('tt2', 400), m.moveTo([51.52, -0.075]));
+  .addState(Scroll('scene1', 400), m.moveTo(scenes[1].geometry.coordinates), 'name1')
+  .addState(Scroll('scene2', 400), m.moveTo(scenes[0].geometry.coordinates))
+  .addState(Scroll('scene3', 400), m.moveTo(scenes[2].geometry.coordinates));
 
 /*
 
@@ -44,7 +94,7 @@ function Click(el) {
 
   return plugin;
 }
-
+*/
 //
 // custom map actions can be done too
 // 
@@ -56,7 +106,7 @@ map.addAction('addMarker', function(storyMap) {
   }
   return addMarker;
 })
-
+/*
 //
 // then we could have high level api with a json based stuff and templates
 // 
