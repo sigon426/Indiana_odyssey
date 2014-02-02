@@ -1,4 +1,4 @@
-//note: geojson original coordinates are changed to lat, lon as spected by the story function
+//note: geojson original coordinates are changed to lat, lon as expected by the story function
 var scenes=[
     {
       "type": "Feature",
