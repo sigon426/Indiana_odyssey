@@ -78,7 +78,7 @@ var scenes=[
         "movie": "Indiana Jones and the Last crusade",
         "location": "Ramblas de Tujillo, Indalecio and Buho, Tabernas Desert",
         "zoom":14,
-        "photo":"tabernas2.jpg"
+        "photo":"Tabernas2.jpg"
       },
       "geometry": {
         "type": "Point",
