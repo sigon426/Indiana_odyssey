@@ -7,7 +7,6 @@ function Map() {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
     }).addTo(map);
 
-
     //L.marker([51.5, -0.09]).addTo(map)
     //  .bindPopup("<b>Hello world!</b><br />I am a popup.");
 
@@ -71,6 +70,7 @@ function map() {
       map.setZoom(zoom);
       L.marker(location).addTo(map)
         .bindPopup(content);
+      map.scrollWheelZoom.disable();
 
     };
 

@@ -1,4 +1,4 @@
-//note: geojson coordinates are changed to lat, lon as spected by the story function
+//note: geojson original coordinates are changed to lat, lon as spected by the story function
 var scenes=[
     {
       "type": "Feature",
@@ -21,9 +21,27 @@ var scenes=[
     {
       "type": "Feature",
       "properties": {
+        "scene": "Plane crash into a tunnel",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Tunel in Cinto's hill,  Rodalquilar mine (Nijar)",
+        "youtube": "", 
+        "zoom":13,
+        "photo":"cerrodelcinto.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.854746,
+          -2.059867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "scene": "Henry Jones Sr. scares the birds away with an umbrella",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "Playa del Monsul, Cabo de Gata (Almeria)",
+        "location": "Playa del Monsul, Cabo de Gata (Almería)",
         "youtube": "<iframe width=",
         "zoom":12,
         "photo":"Monsul.jpg"
@@ -41,7 +59,7 @@ var scenes=[
       "properties": {
         "scene": "Rolls Royce scene",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "Escuela de Artes y Oficios Artísticos de Almería",
+        "location": "Escuela de Artes y Oficios Artísticos (Almería)",
         "zoom":14,
         "photo":"escuela_artes.jpg"
       },
@@ -50,6 +68,41 @@ var scenes=[
         "coordinates": [
           36.83709580821883,
           -2.464486062526703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "Indy in a horse",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "Ramblas de Tujillo, Indalecio and Buho, Tabernas Desert",
+        "zoom":14,
+        "photo":"tabernas2.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.051284,
+          -2.412214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scene": "tank falls into climp",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "'Finca Las Lomillas', Tabernas Desert (Almeria)",
+        "zoom":11,
+        "photo":"tankfall4.png",
+        "youtube": "www.youtube.com/embed/CvcpFTLZwrU"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.018224,
+          -2.45268
         ]
       }
     }
@@ -73,7 +126,10 @@ m = map();
 Story()
   .addState(Scroll('scene0', 400), m.moveTo(getCoordinates(0),getZoom(0),getPopUpContent(0)))
   .addState(Scroll('scene1', 400), m.moveTo(getCoordinates(1),getZoom(1),getPopUpContent(1)))
-  .addState(Scroll('scene2', 400), m.moveTo(getCoordinates(2),getZoom(2),getPopUpContent(2)));
+  .addState(Scroll('scene2', 400), m.moveTo(getCoordinates(2),getZoom(2),getPopUpContent(2)))
+  .addState(Scroll('scene3', 400), m.moveTo(getCoordinates(3),getZoom(3),getPopUpContent(3)))
+  .addState(Scroll('scene4', 400), m.moveTo(getCoordinates(4),getZoom(4),getPopUpContent(4)))
+  .addState(Scroll('scene5', 400), m.moveTo(getCoordinates(5),getZoom(5),getPopUpContent(5)));
 
 
 /*
