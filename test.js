@@ -41,7 +41,7 @@ var scenes=[
       "properties": {
         "scene": "Henry Jones Sr. scares the birds away with an umbrella",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "Playa del Monsul, Cabo de Gata (Almería)",
+        "location": "Monsul beach, Cabo de Gata (Almería)",
         "youtube": "<iframe width=",
         "zoom":12,
         "photo":"Monsul.jpg"
@@ -74,10 +74,27 @@ var scenes=[
     {
       "type": "Feature",
       "properties": {
+        "scene": "Iskenderun streets",
+        "movie": "Indiana Jones and the Last crusade",
+        "location": "29 Almanzor street, near the Alcazaba (Almeria)",
+        "zoom":14,
+        "photo":"calleAlmanzor29now.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83995299684287,
+          -2.4700275063514705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "scene": "Indy in a horse",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "Ramblas de Tujillo, Indalecio and Buho, Tabernas Desert",
-        "zoom":14,
+        "location": "Ramblas deTrujillo, Indalecio y Buho in the <br/> Tabernas Desert",
+        "zoom":15,
         "photo":"Tabernas2.jpg"
       },
       "geometry": {
@@ -94,7 +111,7 @@ var scenes=[
         "scene": "tank falls into climp",
         "movie": "Indiana Jones and the Last crusade",
         "location": "'Finca Las Lomillas', Tabernas Desert (Almeria)",
-        "zoom":11,
+        "zoom":15,
         "photo":"tankfall4.png",
         "youtube": "www.youtube.com/embed/CvcpFTLZwrU"
       },
@@ -116,8 +133,9 @@ function getZoom(sceneNumber) {
   var zoom =scenes[sceneNumber].properties.zoom
   return zoom
 };
+
 function getPopUpContent(sceneNumber) {
-  var popupContent = "<b>"+scenes[sceneNumber].properties.location+"</b><br /><img src='./photos/"+scenes[sceneNumber].properties.photo+"''>"
+  var popupContent = "<table><tr><td><b>"+scenes[sceneNumber].properties.location+"</b></td></tr></table><img src='./photos/"+scenes[sceneNumber].properties.photo+"''>"
   return popupContent
 };
 
@@ -129,7 +147,8 @@ Story()
   .addState(Scroll('scene2', 400), m.moveTo(getCoordinates(2),getZoom(2),getPopUpContent(2)))
   .addState(Scroll('scene3', 400), m.moveTo(getCoordinates(3),getZoom(3),getPopUpContent(3)))
   .addState(Scroll('scene4', 400), m.moveTo(getCoordinates(4),getZoom(4),getPopUpContent(4)))
-  .addState(Scroll('scene5', 400), m.moveTo(getCoordinates(5),getZoom(5),getPopUpContent(5)));
+  .addState(Scroll('scene5', 400), m.moveTo(getCoordinates(5),getZoom(5),getPopUpContent(5)))
+  .addState(Scroll('scene6', 400), m.moveTo(getCoordinates(6),getZoom(6),getPopUpContent(6)));
 
 
 /*
