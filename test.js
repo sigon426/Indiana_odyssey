@@ -5,9 +5,10 @@ var scenes=[
       "properties": {
         "scene": "Iskenderun train station",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "La estación de tren de Guadix",
+        "location": "La estación de tren de Guadix (Granada)",
         "youtube": "", 
-        "zoom":13
+        "zoom":12,
+        "photo":"guadix2.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -22,7 +23,7 @@ var scenes=[
       "properties": {
         "scene": "Henry Jones Sr. scares the birds away with an umbrella",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "Playa del Monsul, Cabo de Gata",
+        "location": "Playa del Monsul, Cabo de Gata (Almeria)",
         "youtube": "<iframe width=",
         "zoom":12,
         "photo":"Monsul.jpg"
@@ -40,8 +41,9 @@ var scenes=[
       "properties": {
         "scene": "Rolls Royce scene",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "Escuela de Artes y Oficios de Almeria",
-        "zoom":14
+        "location": "Escuela de Artes y Oficios Artísticos de Almería",
+        "zoom":14,
+        "photo":"escuela_artes.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -53,15 +55,25 @@ var scenes=[
     }
 ];
 
+function getCoordinates(sceneNumber) {
+  var coordinates =scenes[sceneNumber].geometry.coordinates 
+  return coordinates
+};
+function getZoom(sceneNumber) {
+  var zoom =scenes[sceneNumber].properties.zoom
+  return zoom
+};
+function getPopUpContent(sceneNumber) {
+  var popupContent = "<b>"+scenes[sceneNumber].properties.location+"</b><br /><img src='./photos/"+scenes[sceneNumber].properties.photo+"''>"
+  return popupContent
+};
 
 m = map();
 
 Story()
-  .addState(Scroll('scene0', 400), m.moveTo(scenes[0].geometry.coordinates,scenes[0].properties.zoom))
-  .addState(Scroll('scene1', 400), m.moveTo(scenes[1].geometry.coordinates,scenes[1].properties.zoom))
-  .addState(Scroll('scene2', 400), m.moveTo(scenes[2].geometry.coordinates,scenes[2].properties.zoom));
-
-
+  .addState(Scroll('scene0', 400), m.moveTo(getCoordinates(0),getZoom(0),getPopUpContent(0)))
+  .addState(Scroll('scene1', 400), m.moveTo(getCoordinates(1),getZoom(1),getPopUpContent(1)))
+  .addState(Scroll('scene2', 400), m.moveTo(getCoordinates(2),getZoom(2),getPopUpContent(2)));
 
 
 /*
@@ -105,8 +117,7 @@ function Click(el) {
 //
 // custom map actions can be done too
 // 
-var pos=scenes[1].geometry.coordinates;
-var content="<b>"+scenes[1].properties.location+"</b><br /><img src='./photos/"+scenes[1].properties.photo+"''>"
+
 Map()
 
 

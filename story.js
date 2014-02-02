@@ -1,6 +1,6 @@
 
 function Map() {
-    var map = L.map('map').setView([36.7, -2.4], 10);
+    var map = L.map('map').setView([36.7, -2.4], 8);
 
     L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
       maxZoom: 18,
@@ -8,8 +8,8 @@ function Map() {
     }).addTo(map);
 
 
-    L.marker([51.5, -0.09]).addTo(map)
-      .bindPopup("<b>Hello world!</b><br />I am a popup.");
+    //L.marker([51.5, -0.09]).addTo(map)
+    //  .bindPopup("<b>Hello world!</b><br />I am a popup.");
 
     return map;
 
@@ -65,12 +65,13 @@ function map() {
     story = _;
   };
 
-  _m.moveTo = function(location, zoom) {
+  _m.moveTo = function(location, zoom, content) {
     var f = function() {
       map.panTo(location);
       map.setZoom(zoom);
       L.marker(location).addTo(map)
-        .bindPopup("<b>Hello world!</b><br />I am a popup.");
+        .bindPopup(content);
+
     };
 
     f.story = _m.story;
