@@ -4,7 +4,7 @@ var scenes=[
       "type": "Feature",
       "properties": {
         "scene": "Iskenderun train station",
-        "movie": "Indiana Jones and the Last crusade",
+        "movie": "Indiana Jones and the Last Crusade",
         "location": "La estación de tren de Guadix (Granada)",
         "youtube": "", 
         "zoom":14,

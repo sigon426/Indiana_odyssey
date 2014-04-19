@@ -1,20 +1,20 @@
 function Map() {
   console.log('leaflet version: '+L.version)
 
-    var map = L.map('map').setView([36.7, -2.4], 8);
+  var map = L.map('map').setView([36.7, -2.4], 8);
 
-    var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: " &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
-      maxZoom: 18
-    })
-    var ggl = new L.Google();
-    var ggl2 = new L.Google('TERRAIN');
+  var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: " &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
+    maxZoom: 18
+  })
+  var ggl = new L.Google();
+  var ggl2 = new L.Google('TERRAIN');
 
-    map.addLayer(osm);
+  map.addLayer(osm);
 
-    L.control.layers({'OSM':osm, 'Google':ggl, 'Google Terrain':ggl2}, {}).addTo(map);
+  L.control.layers({'OSM':osm, 'Google':ggl, 'Google Terrain':ggl2}, {}).addTo(map);
 
-    return map;
+  return map;
 
 };
 
