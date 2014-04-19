@@ -1,5 +1,5 @@
 /*
- * L.TileLayer is used for standard xyz-numbered tile layers.
+ * L.TileLayer  is used for standard xyz-numbered tile layers.
  */
 
 L.Google = L.Class.extend({
