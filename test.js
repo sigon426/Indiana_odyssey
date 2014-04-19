@@ -7,7 +7,7 @@ var scenes=[
         "movie": "Indiana Jones and the Last Crusade",
         "location": "La estación de tren de Guadix (Granada)",
         "youtube": "", 
-        "zoom":14,
+        "zoom":17,
         "photo":"guadix2.jpg"
       },
       "geometry": {
@@ -43,7 +43,7 @@ var scenes=[
         "movie": "Indiana Jones and the Last crusade",
         "location": "Monsul beach, Cabo de Gata (Almería)",
         "youtube": "<iframe width=",
-        "zoom":14,
+        "zoom":17,
         "photo":"Monsul.jpg"
       },
       "geometry": {
@@ -60,7 +60,7 @@ var scenes=[
         "scene": "Rolls Royce scene",
         "movie": "Indiana Jones and the Last crusade",
         "location": "Escuela de Artes y Oficios Artísticos (Almería)",
-        "zoom":14,
+        "zoom":17,
         "photo":"escuela_artes.jpg"
       },
       "geometry": {
@@ -94,7 +94,7 @@ var scenes=[
         "scene": "Indy in a horse",
         "movie": "Indiana Jones and the Last crusade",
         "location": "Ramblas deTrujillo, Indalecio y Buho in the <br/> Tabernas Desert",
-        "zoom":15,
+        "zoom":16,
         "photo":"Tabernas2.jpg"
       },
       "geometry": {
@@ -111,7 +111,7 @@ var scenes=[
         "scene": "tank falls into climp",
         "movie": "Indiana Jones and the Last crusade",
         "location": "'Finca Las Lomillas', Tabernas Desert (Almeria)",
-        "zoom":15,
+        "zoom":16,
         "photo":"tankfall4.png",
         "youtube": "www.youtube.com/embed/CvcpFTLZwrU"
       },
