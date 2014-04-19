@@ -10,7 +10,7 @@ function Map() {
   var ggl = new L.Google();
   var ggl2 = new L.Google('TERRAIN');
 
-  map.addLayer(osm);
+  map.addLayer(ggl);
 
   L.control.layers({'OSM':osm, 'Google':ggl, 'Google Terrain':ggl2}, {}).addTo(map);
 

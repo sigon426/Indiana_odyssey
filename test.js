@@ -7,7 +7,7 @@ var scenes=[
         "movie": "Indiana Jones and the Last Crusade",
         "location": "La estación de tren de Guadix (Granada)",
         "youtube": "", 
-        "zoom":17,
+        "zoom":15,
         "photo":"guadix2.jpg"
       },
       "geometry": {
@@ -93,7 +93,7 @@ var scenes=[
       "properties": {
         "scene": "Indy in a horse",
         "movie": "Indiana Jones and the Last crusade",
-        "location": "Ramblas deTrujillo, Indalecio y Buho in the <br/> Tabernas Desert",
+        "location": "Ramblas deTrujillo, Indalecio y Buho in the Tabernas Desert",
         "zoom":16,
         "photo":"Tabernas2.jpg"
       },
