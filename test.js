@@ -77,7 +77,7 @@ var scenes=[
         "scene": "Iskenderun streets",
         "movie": "Indiana Jones and the Last crusade",
         "location": "29 Almanzor street, near the Alcazaba (Almeria)",
-        "zoom":14,
+        "zoom":17,
         "photo":"calleAlmanzor29now.jpg"
       },
       "geometry": {
