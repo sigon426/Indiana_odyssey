@@ -1,14 +1,20 @@
 function Map() {
+  console.log('leaflet version: '+L.version)
+
     var map = L.map('map').setView([36.7, -2.4], 8);
 
-    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: " &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
       maxZoom: 18
-    }).addTo(map);
+    })
+    var ggl = new L.Google();
+    var ggl2 = new L.Google('TERRAIN');
 
-    //L.marker([51.5, -0.09]).addTo(map)
-    //  .bindPopup("<b>Hello world!</b><br />I am a popup.");
+    map.addLayer(osm);
 
+    L.control.layers({'OSM':osm, 'Google':ggl, 'Google Terrain':ggl2}, {}).addTo(map);
+
+    console.log(ggl)
     return map;
 
 };
