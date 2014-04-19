@@ -14,7 +14,6 @@ function Map() {
 
     L.control.layers({'OSM':osm, 'Google':ggl, 'Google Terrain':ggl2}, {}).addTo(map);
 
-    console.log(ggl)
     return map;
 
 };
