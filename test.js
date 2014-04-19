@@ -7,7 +7,7 @@ var scenes=[
         "movie": "Indiana Jones and the Last crusade",
         "location": "La estación de tren de Guadix (Granada)",
         "youtube": "", 
-        "zoom":12,
+        "zoom":14,
         "photo":"guadix2.jpg"
       },
       "geometry": {
@@ -25,7 +25,7 @@ var scenes=[
         "movie": "Indiana Jones and the Last crusade",
         "location": "Tunel in Cinto's hill,  Rodalquilar mine (Nijar)",
         "youtube": "", 
-        "zoom":13,
+        "zoom":14,
         "photo":"cerrodelcinto.jpg"
       },
       "geometry": {
@@ -43,7 +43,7 @@ var scenes=[
         "movie": "Indiana Jones and the Last crusade",
         "location": "Monsul beach, Cabo de Gata (Almería)",
         "youtube": "<iframe width=",
-        "zoom":12,
+        "zoom":14,
         "photo":"Monsul.jpg"
       },
       "geometry": {
