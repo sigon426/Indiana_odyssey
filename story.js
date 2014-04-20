@@ -73,7 +73,7 @@ function map() {
       map.panTo(location);
       map.setZoom(zoom);
       L.marker(location).addTo(map)
-        .bindPopup(content);
+        .bindPopup(content).openPopup();
       map.scrollWheelZoom.disable();
 
     };
