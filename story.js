@@ -6,13 +6,25 @@ function Map() {
   var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: " &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
     maxZoom: 18
-  })
+  });
   var ggl = new L.Google();
   var ggl2 = new L.Google('TERRAIN');
 
-  map.addLayer(ggl);
+  var pnoa = L.tileLayer.wms("http://www.ign.es/wms-inspire/pnoa-ma", {
+    layers: "OI.OrthoimageCoverage",//layer name (see get capabilities)
+    format: 'image/jpeg',
+    transparent: false,
+    version: '1.3.0',//wms version (see get capabilities)
+    attribution: "Ortofoto PNOA. Cedido por © Instituto Geográfico Nacional de España"
+  })
+  
+  var Thunderforest_Landscape = L.tileLayer('http://{s}.tile3.opencyclemap.org/landscape/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+  });
 
-  L.control.layers({'OSM':osm, 'Google':ggl, 'Google Terrain':ggl2}, {}).addTo(map);
+  map.addLayer(pnoa);
+
+  L.control.layers({'OSM':osm, 'Ortofoto':pnoa, 'Google': ggl, 'Landscape':Thunderforest_Landscape}, {}).addTo(map);
 
   return map;
 
@@ -70,8 +82,10 @@ function map() {
 
   _m.moveTo = function(location, zoom, content) {
     var f = function() {
-      map.panTo(location);
-      map.setZoom(zoom);
+      /*map.panTo(location);
+      map.setZoom(zoom);*/
+
+      map.setView(location, zoom);
       L.marker(location).addTo(map)
         .bindPopup(content).openPopup();
       map.scrollWheelZoom.disable();
