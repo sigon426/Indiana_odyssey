@@ -22,10 +22,21 @@ function Map() {
     attribution: '&copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
   });
 
-  map.addLayer(pnoa);
+  map.addLayer(ggl);
 
   L.control.layers({'OSM':osm, 'Ortofoto':pnoa, 'Google': ggl, 'Landscape':Thunderforest_Landscape}, {}).addTo(map);
-
+  
+  // add intial markers
+  var marker = new Array();     
+  var markers = [{"lat":"37.316814","lon":"-3.127156"},{"lat":"36.854746","lon":"-2.059867"},{"lat":"36.73068571671117","lon":"-2.14582085609436"}, {"lat":"36.83709580821883","lon":"-2.464486062526703"}, {"lat":"36.83995299684287","lon":"-2.4700275063514705"}]
+  for(i=0;i<markers.length;i++){
+    var myMarker = new L.marker([markers[i].lat, markers[i].lon]);
+    marker.push(myMarker);
+    map.addLayer(marker[i]);
+  }
+  
+  //marker1 = new L.Marker(e.latlng, {draggable:true});
+  //map.addLayer(marker);
   return map;
 
 };
