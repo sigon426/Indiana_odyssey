@@ -7,8 +7,7 @@ function Map() {
     attribution: " &copy; <a href='http://openstreetmap.org'>OpenStreetMap</a> contributors",
     maxZoom: 18
   });
-  var ggl = new L.Google();
-  var ggl2 = new L.Google('TERRAIN');
+
 
   var pnoa = L.tileLayer.wms("http://www.ign.es/wms-inspire/pnoa-ma", {
     layers: "OI.OrthoimageCoverage",//layer name (see get capabilities)
@@ -17,24 +16,20 @@ function Map() {
     version: '1.3.0',//wms version (see get capabilities)
     attribution: "Ortofoto PNOA. Cedido por © Instituto Geográfico Nacional de España"
   })
-  
-  var Thunderforest_Landscape = L.tileLayer('http://{s}.tile3.opencyclemap.org/landscape/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-  });
 
-  map.addLayer(ggl);
+  map.addLayer(osm);
 
-  L.control.layers({'OSM':osm, 'Ortofoto':pnoa, 'Google': ggl, 'Landscape':Thunderforest_Landscape}, {}).addTo(map);
-  
+  L.control.layers({'OSM':osm, 'Ortofoto':pnoa}, {}).addTo(map);
+
   // add intial markers
-  var marker = new Array();     
+  var marker = new Array();
   var markers = [{"lat":"37.316814","lon":"-3.127156"},{"lat":"36.854746","lon":"-2.059867"},{"lat":"36.73068571671117","lon":"-2.14582085609436"}, {"lat":"36.83709580821883","lon":"-2.464486062526703"}, {"lat":"36.83995299684287","lon":"-2.4700275063514705"}]
   for(i=0;i<markers.length;i++){
     var myMarker = new L.marker([markers[i].lat, markers[i].lon]);
     marker.push(myMarker);
     map.addLayer(marker[i]);
   }
-  
+
   //marker1 = new L.Marker(e.latlng, {draggable:true});
   //map.addLayer(marker);
   return map;
@@ -52,20 +47,20 @@ function Story() {
   story.addState = function(a, b, opts) {
     var i = triggers.length;
     triggers.push({
-      a: a, 
+      a: a,
       b: b,
       opts: opts
     });
-    a.story(story, function() { 
+    a.story(story, function() {
       if (story.state() !== i) {
         story.state(i);
-        b(); 
+        b();
       }
     });
-    b.story(story, function() { 
+    b.story(story, function() {
       if (story.state() !== i) {
         state.state(i);
-        a(); 
+        a();
       }
     });
     return story;
